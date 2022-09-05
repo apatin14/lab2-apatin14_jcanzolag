@@ -16,7 +16,7 @@ conectionparamenter = pika.ConnectionParameters(
     os.environ['MQTTSERVER'], os.environ['MQTTPORT'], '/', credentials)
 connection = pika.BlockingConnection(conectionparamenter)
 channel = connection.channel()
-queue_name = os.environ['QUEUE_ARDUINO_NAME']
+queue_name = os.environ['QUEUE_ARDUINO_PROX_NAME']
 channel.exchange_declare(
     exchange=os.environ['EXCHANGE'], exchange_type=os.environ['EXCHANGE_TOPIC'], durable=True)
 channel.queue_bind(exchange=os.environ['EXCHANGE'],

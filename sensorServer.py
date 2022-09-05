@@ -41,7 +41,7 @@ def senddata(body):
     channel.exchange_declare(
         exchange=os.environ['EXCHANGE'], exchange_type=os.environ['EXCHANGE_TOPIC'], durable=True)
     channel.basic_publish(
-        exchange=os.environ['EXCHANGE'], routing_key=os.environ['ROUTING_KEY'], body=body)
+        exchange=os.environ['EXCHANGE'], routing_key=os.environ['ROUTING_PROX_KEY'], body=body)
     print("Sended data to Message Mananger")
     connection.close()
 
